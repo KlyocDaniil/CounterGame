@@ -62,6 +62,9 @@ changer.addEventListener('click',()=>{
 })
 let Perks = []
 let perk1 = document.getElementById('perk1')
+let perk2 = document.getElementById('perk2')
+let perk3 = document.getElementById('perk3')
+let perk4 = document.getElementById('perk4')
 let BuyItemBtn1 = document.getElementById("btnBuyItemNum1")
 let IdPerk = 0;
 BuyItemBtn1.addEventListener('click',()=>{
@@ -76,7 +79,7 @@ let BuyItemBtn2 = document.getElementById('btnBuyItemNum2')
 BuyItemBtn2.addEventListener('click',()=>{
     coinsMain -= 2;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk1.innerText=`x3 Улучшение`
+    perk2.innerText=`x3 Улучшение`
     btn.innerText =`+3`;
     IdPerk ='2';
     Perks.push(IdPerk)
@@ -85,7 +88,7 @@ let BuyItemBtn3 = document.getElementById('btnBuyItemNum3')
 BuyItemBtn3.addEventListener('click',()=>{
     coinsMain -= 3;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk1.innerText=`x4 Улучшение`
+    perk3.innerText=`x4 Улучшение`
     btn.innerText =`+4`;
     IdPerk ='3';
     Perks.push(IdPerk)
@@ -94,7 +97,7 @@ let BuyItemBtn4 = document.getElementById('btnBuyItemNum4')
 BuyItemBtn4.addEventListener('click',()=>{
     coinsMain -= 4;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk1.innerText=`x5 Улучшение`
+    perk4.innerText=`x5 Улучшение`
     btn.innerText =`+5`;
     IdPerk ='4';
     Perks.push(IdPerk)
