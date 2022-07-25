@@ -27,10 +27,13 @@ let changer = document.getElementById('changeClicksToCoins')
 let coins = document.getElementById('coins')
 let coinsMain = 0;
 changer.addEventListener('click',()=>{
-    if (SaveCounter.pop() === 10){
-        coinsMain +=1;
+    let countClicks = SaveCounter.pop()
+    let MathTime = countClicks/10;
+    if(MathTime>=0) {
+        coinsMain += MathTime;
         coins.innerText = `Количество монет: ${coinsMain}`
         counter = 0;
         pl.innerText = `Кликов:${counter}`
     }
 })
+
