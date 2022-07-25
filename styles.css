@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: row;
     /*overflow: scroll;*/
+
 }
 
 /*.Main{*/
@@ -27,7 +28,7 @@
     align-items: center;
     height: 100%;
     width: 50%;
-    margin-left: 20%;
+    margin-left: 5%;
     /*padding: 20px;*/
     background: #1f2833;
     color: #c5c6c7;
@@ -42,20 +43,22 @@
 }
 .windCoin{
     height: 100%;
-    width: 25%;
+    width: 30%;
     background-color: #1f2833;
     text-align: center;
     color: #c5c6c7;
     font-size: 50px;
-
+    margin-left: 2%;
 
 }
-.perksToClicks{
-    font-size: 50%;
-
-    height: 10%;
-    background-color: #45a29e;
-
+.workPerks{
+    width: 20%;
+    height: 100%;
+    background-color: #1f2833;
+    margin-left: 5%;
+    margin-right: 2%;
+    color: #c5c6c7;
+    font-size: 50px;
 }
 .countMoney{
     /*width: 80%;*/
@@ -68,13 +71,15 @@
 display: flex;
 flex-wrap: wrap;
     justify-content: space-around;
+
 }
 .kartItem{
-    width: 45%;
+    width: 40%;
     height: 50%;
     background-color:#c5c6c7 ;
     color: #1f2833;
-    margin-bottom: 20%;
+
+    margin-top: 20%;
 }
 .descriptionItem{
     font-size: 50%;
