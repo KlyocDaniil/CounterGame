@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .UltraMainAll{
@@ -40,11 +41,51 @@
 }
 .windCoin{
     height: 100%;
-    width: 20%;
+    width: 25%;
     background-color: #1f2833;
     text-align: center;
     color: #c5c6c7;
 
+
+}
+.perksToClicks{
+    font-size: 50%;
+
+    height: 10%;
+    background-color: #45a29e;
+
+}
+.countMoney{
+    /*width: 80%;*/
+    font-size: 70%;
+
+}
+.allItems{
+display: flex;
+flex-wrap: wrap;
+    justify-content: space-around;
+}
+.kartItem{
+    width: 45%;
+    height: 50%;
+    background-color:#c5c6c7 ;
+    color: #1f2833;
+    margin-bottom: 20%;
+}
+.descriptionItem{
+    font-size: 50%;
+}
+.priceItem{
+    font-size: 40%;
+}
+.buyItem{
+    width: 90%;
+    color: #0b0c10;
+    background-color: #66fcf1;
+    border: 0.5px solid;
+}
+.kartItem img{
+    width: 40%;
 
 }
 .counter h1,div{
