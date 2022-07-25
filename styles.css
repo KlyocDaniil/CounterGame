@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .UltraMainAll{
@@ -29,10 +29,18 @@
     height: 100%;
     width: 50%;
     margin-left: 5%;
+
     /*padding: 20px;*/
     background: #1f2833;
     color: #c5c6c7;
     font-size: 26px;
+}
+.counter h1{
+    font-size: 34px;
+}
+.counterClicks{
+    font-size: 150%;
+    padding: 2%;
 }
 .nrmlbtn{
     width: 90%;
