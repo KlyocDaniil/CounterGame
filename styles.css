@@ -31,6 +31,7 @@
     /*padding: 20px;*/
     background: #1f2833;
     color: #c5c6c7;
+    font-size: 26px;
 }
 .nrmlbtn{
     width: 90%;
@@ -45,6 +46,7 @@
     background-color: #1f2833;
     text-align: center;
     color: #c5c6c7;
+    font-size: 50px;
 
 
 }
@@ -58,8 +60,10 @@
 .countMoney{
     /*width: 80%;*/
     font-size: 70%;
+    margin-bottom: 5%;
 
 }
+
 .allItems{
 display: flex;
 flex-wrap: wrap;
@@ -88,7 +92,7 @@ flex-wrap: wrap;
     width: 40%;
 
 }
-.counter h1,div{
-    /*margin-right: 20px;*/
-    font-size: 54px;
-}
+/*.counter h1,div{*/
+/*    !*margin-right: 20px;*!*/
+/*    font-size: 54px;*/
+/*}*/
