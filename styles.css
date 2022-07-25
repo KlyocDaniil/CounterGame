@@ -87,7 +87,7 @@ flex-wrap: wrap;
     background-color:#c5c6c7 ;
     color: #1f2833;
 
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .descriptionItem{
     font-size: 50%;
@@ -105,6 +105,16 @@ flex-wrap: wrap;
     width: 40%;
 
 }
+.nrmlbtn.BlockedCard{
+    background-color: red;
+}
+.kartItem.BlockedCard{
+    background-color: red;
+}
+.kartItem.Unlocked{
+    background-color: blue;  animation-duration: 2s;
+}
+
 /*.counter h1,div{*/
 /*    !*margin-right: 20px;*!*/
 /*    font-size: 54px;*/
