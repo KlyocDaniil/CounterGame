@@ -109,7 +109,7 @@ flex-wrap: wrap;
     background-color: red;
 }
 .kartItem.BlockedCard{
-    background-color: red;
+    background-color: #222629;
 }
 .kartItem.Unlocked{
     background-color: blue;  animation-duration: 2s;

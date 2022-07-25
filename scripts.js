@@ -59,9 +59,13 @@ let coinsMain = 0;
 
 
 let kart1 = document.getElementById('kart1')
+kart1.classList.add("BlockedCard")
 let kart2 = document.getElementById('kart2')
+kart2.classList.add("BlockedCard")
 let kart3 = document.getElementById('kart3')
+kart3.classList.add("BlockedCard")
 let kart4 = document.getElementById('kart4')
+kart4.classList.add("BlockedCard")
 
 
 
@@ -70,21 +74,37 @@ changer.addEventListener('click',()=>{
     let MathTime = countClicks/10;
     if(MathTime>=0) {
         coinsMain += MathTime;
-        coins.innerText = `Количество монет: ${coinsMain}`
-
+        if (coinsMain>=1){
+            kart1.classList.remove("BlockedCard")
+        }
+        if (coinsMain>=2&&perk1===1){
+            kart2.classList.remove("BlockedCard")
+        }
+        if (coinsMain>=3&&perk1===1&&perk2===2){
+            kart3.classList.remove("BlockedCard")
+        }
+        if (coinsMain>=4&&perk1===1&&perk2===2&&perk3===3){
+            kart4.classList.remove("BlockedCard")
+        }
+        coins.innerText = `Количество монет: ${coinsMain.toFixed(1)}`
         counter = 0;
         pl.innerText = `Кликов:${counter}`
     }
 })
 let Perks = []
-let perk1 = document.getElementById('perk1')
-perk1 =0;
-let perk2 = document.getElementById('perk2')
-perk2 = 0;
-let perk3 = document.getElementById('perk3')
-perk3=0;
-let perk4 = document.getElementById('perk4')
-perk4=0;
+let perk1 =0
+let perk2 =0
+let perk3 =0
+let perk4 = 0;
+
+// let perk1 = document.getElementById('perk1')
+
+// let perk2 = document.getElementById('perk2')
+
+// let perk3 = document.getElementById('perk3')
+
+// let perk4 = document.getElementById('perk4')
+
 let BuyItemBtn1 = document.getElementById("btnBuyItemNum1")
 let IdPerk = 0;
 BuyItemBtn1.addEventListener('click',()=>{
@@ -135,8 +155,24 @@ BuyItemBtn3.addEventListener('click',()=>{
     }
 })
 
+function clearFirstListCards(){
+    kart1.remove()
+    kart2.remove()
+    kart3.remove()
+    kart4.remove()
+}
+
 let btnNextLvl = document.getElementById('btn_NextLvl')
 btnNextLvl.classList.add("BlockedCard")
+
+
+    btnNextLvl.addEventListener('click', ()=>{
+        if(perk4 === 4) {
+            clearFirstListCards()
+        }
+    })
+
+
 
 let BuyItemBtn4 = document.getElementById('btnBuyItemNum4')
 BuyItemBtn4.addEventListener('click',()=>{
@@ -150,6 +186,7 @@ BuyItemBtn4.addEventListener('click',()=>{
         kart4.classList.add('Unlocked')
         Perks.push(IdPerk)
         btnNextLvl.classList.remove("BlockedCard")
+
     }
     else
     {
