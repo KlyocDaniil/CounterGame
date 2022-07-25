@@ -1,6 +1,8 @@
 let btn = document.getElementById('butclick')
 let pl = document.getElementById('idpl')
 let counter = 0;
+
+
 btn.addEventListener('click', () =>{
     counter +=1;
     pl.innerText = `Кликов:${counter}`
