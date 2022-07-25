@@ -10,6 +10,7 @@ btn.addEventListener('click', () =>{
    else if (IdPerk === '2')
    {
        counter+=3
+       // alert(Perks)
    }
    else if(IdPerk ==='3')
    {
@@ -24,9 +25,9 @@ btn.addEventListener('click', () =>{
        counter +=1;
    }
 
-   for (let i = 0;i<Perks.length;i++){
-
-   }
+   // for (let i = 0;i<Perks.length;i++){
+   //
+   // }
 
 
 
@@ -72,59 +73,63 @@ let perk4 = document.getElementById('perk4')
 let BuyItemBtn1 = document.getElementById("btnBuyItemNum1")
 let IdPerk = 0;
 BuyItemBtn1.addEventListener('click',()=>{
-    if(coinsMain>=1) {
+    if(coinsMain>=1&&perk1!==1) {
         coinsMain -= 1;
         coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
         perk1.innerText = `x2 Улучшение`
+        perk1 = 1;
         btn.innerText = `+2`;
         IdPerk = '1';
         Perks.push(IdPerk)
     }
     else
     {
-        alert("У вас нет денег... Серьезно?")
+        alert("У вас нет денег... Серьезно?, надеюсь у вас просто уже есть этот перк")
     }
 })
 let BuyItemBtn2 = document.getElementById('btnBuyItemNum2')
 BuyItemBtn2.addEventListener('click',()=>{
-    if(coinsMain>=2){
+    if(coinsMain>=2&&perk2!==2){
     coinsMain -= 2;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
     perk2.innerText=`x3 Улучшение`
+        perk2 = 2;
     btn.innerText =`+3`;
     IdPerk ='2';
     Perks.push(IdPerk)}
     else
     {
-        alert("У вас нет денег, ну же, постарайтесь потыкать кнопочки!!")
+        alert("У вас нет денег или этот перк уже есть!")
     }
 })
 let BuyItemBtn3 = document.getElementById('btnBuyItemNum3')
 BuyItemBtn3.addEventListener('click',()=>{
-    if(coinsMain>=3){
+    if(coinsMain>=3&&perk3!==3){
     coinsMain -= 3;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
     perk3.innerText=`x4 Улучшение`
+        perk3 =3;
     btn.innerText =`+4`;
     IdPerk ='3';
     Perks.push(IdPerk)
         }else {
-        alert("У вас нет денег!")
+        alert("У вас нет денег или этот перк уже есть!")
     }
 })
 let BuyItemBtn4 = document.getElementById('btnBuyItemNum4')
 BuyItemBtn4.addEventListener('click',()=>{
-    if(coinsMain>4) {
+    if(coinsMain>4&&perk4!==4) {
         coinsMain -= 4;
         coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
         perk4.innerText = `x5 Улучшение`
+        perk4=4;
         btn.innerText = `+5`;
         IdPerk = '4';
         Perks.push(IdPerk)
     }
     else
     {
-        alert('У вас нет денег!')
+        alert("У вас нет денег или этот перк уже есть!")
     }
 })
 
