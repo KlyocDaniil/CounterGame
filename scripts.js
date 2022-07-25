@@ -24,6 +24,10 @@ btn.addEventListener('click', () =>{
        counter +=1;
    }
 
+   for (let i = 0;i<Perks.length;i++){
+
+   }
+
 
 
     pl.innerText = `Кликов:${counter}`
@@ -68,39 +72,60 @@ let perk4 = document.getElementById('perk4')
 let BuyItemBtn1 = document.getElementById("btnBuyItemNum1")
 let IdPerk = 0;
 BuyItemBtn1.addEventListener('click',()=>{
-    coinsMain -= 1;
-    coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk1.innerText=`x2 Улучшение`
-    btn.innerText =`+2`;
-    IdPerk ='1';
-    Perks.push(IdPerk)
+    if(coinsMain>=1) {
+        coinsMain -= 1;
+        coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
+        perk1.innerText = `x2 Улучшение`
+        btn.innerText = `+2`;
+        IdPerk = '1';
+        Perks.push(IdPerk)
+    }
+    else
+    {
+        alert("У вас нет денег... Серьезно?")
+    }
 })
 let BuyItemBtn2 = document.getElementById('btnBuyItemNum2')
 BuyItemBtn2.addEventListener('click',()=>{
+    if(coinsMain>=2){
     coinsMain -= 2;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
     perk2.innerText=`x3 Улучшение`
     btn.innerText =`+3`;
     IdPerk ='2';
-    Perks.push(IdPerk)
+    Perks.push(IdPerk)}
+    else
+    {
+        alert("У вас нет денег, ну же, постарайтесь потыкать кнопочки!!")
+    }
 })
 let BuyItemBtn3 = document.getElementById('btnBuyItemNum3')
 BuyItemBtn3.addEventListener('click',()=>{
+    if(coinsMain>=3){
     coinsMain -= 3;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
     perk3.innerText=`x4 Улучшение`
     btn.innerText =`+4`;
     IdPerk ='3';
     Perks.push(IdPerk)
+        }else {
+        alert("У вас нет денег!")
+    }
 })
 let BuyItemBtn4 = document.getElementById('btnBuyItemNum4')
 BuyItemBtn4.addEventListener('click',()=>{
-    coinsMain -= 4;
-    coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk4.innerText=`x5 Улучшение`
-    btn.innerText =`+5`;
-    IdPerk ='4';
-    Perks.push(IdPerk)
+    if(coinsMain>4) {
+        coinsMain -= 4;
+        coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
+        perk4.innerText = `x5 Улучшение`
+        btn.innerText = `+5`;
+        IdPerk = '4';
+        Perks.push(IdPerk)
+    }
+    else
+    {
+        alert('У вас нет денег!')
+    }
 })
 
 
