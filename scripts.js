@@ -154,6 +154,13 @@ BuyItemBtn3.addEventListener('click',()=>{
         alert("У вас нет денег или этот перк уже есть!")
     }
 })
+let cheats = document.getElementById('btn_Cheat')
+
+cheats.addEventListener('click', ()=>{
+    coinsMain = 99999;
+    coins.innerText =`Количество монет:${coinsMain.toFixed(1)}`
+})
+
 
 function clearFirstListCards(){
     kart1.remove()
@@ -169,6 +176,7 @@ btnNextLvl.classList.add("BlockedCard")
     btnNextLvl.addEventListener('click', ()=>{
         if(perk4 === 4) {
             clearFirstListCards()
+            
         }
     })
 
