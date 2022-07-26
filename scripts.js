@@ -155,7 +155,7 @@ BuyItemBtn3.addEventListener('click',()=>{
     }
 })
 let cheats = document.getElementById('btn_Cheat')
-
+let a;
 cheats.addEventListener('click', ()=>{
     coinsMain = 99999;
     coins.innerText =`Количество монет:${coinsMain.toFixed(1)}`
@@ -176,7 +176,7 @@ btnNextLvl.classList.add("BlockedCard")
     btnNextLvl.addEventListener('click', ()=>{
         if(perk4 === 4) {
             clearFirstListCards()
-            
+
         }
     })
 
