@@ -29,6 +29,7 @@ let brnDel= document.getElementById('delal')
 brnDel.addEventListener('click', ()=>{
     counter=0;
     pl.innerText = `Кликов:${counter}`
+
 })
 
 let SaveCounter = [];
@@ -44,7 +45,7 @@ btnSave.addEventListener('click', () =>{
         throw new Error();
     }
     }
-    catch (ErrorFoundArrayIsLargeThen1){
+    catch (e){
     alert(`Вы можете сохранить только одну сумму кликов, ваша текущая сумма ${SaveCounter}, обменяйте её`)
     }
 
@@ -67,9 +68,9 @@ kart3.classList.add("BlockedCard")
 let kart4 = document.getElementById('kart4')
 kart4.classList.add("BlockedCard")
 
-function clearStyleBlock(object){
-    this.classList.remove("BlockedCard")
-}
+// function clearStyleBlock(object){
+//     this.classList.remove("BlockedCard")
+// }
 
 changer.addEventListener('click',()=>{
     let countClicks = SaveCounter.pop()
@@ -107,7 +108,7 @@ let perCheck = 0;
 let BuyItemBtn1 = document.getElementById("btnBuyItemNum1")
 let IdPerk = 0;
 BuyItemBtn1.addEventListener('click',()=>{
-    if(coinsMain>=1&&perCheck!==1) {
+    if(coinsMain>=1&&perCheck===0) {
         coinsMain -= 1;
         coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
         // perk1.innerText = "x2"
@@ -124,7 +125,7 @@ BuyItemBtn1.addEventListener('click',()=>{
 })
 let BuyItemBtn2 = document.getElementById('btnBuyItemNum2')
 BuyItemBtn2.addEventListener('click',()=>{
-    if(coinsMain>=2&&perCheck!==0&&perCheck!==2){
+    if(coinsMain>=2&&perCheck===1&&perCheck!==2){
     coinsMain -= 2;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
     // perk2.innerText=`x3`
@@ -140,7 +141,7 @@ BuyItemBtn2.addEventListener('click',()=>{
 })
 let BuyItemBtn3 = document.getElementById('btnBuyItemNum3')
 BuyItemBtn3.addEventListener('click',()=>{
-    if(coinsMain>=3&&perCheck!==3&&perCheck!==0&&perCheck!==0){
+    if(coinsMain>=3&&perCheck!==3&&perCheck===2){
     coinsMain -= 3;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
     // perk3.innerText=`x4`
@@ -192,7 +193,6 @@ BuyItemBtn4.addEventListener('click',()=>{
         kart4.classList.add('Unlocked')
         Perks.push(IdPerk)
         btnNextLvl.classList.remove("BlockedCard")
-
     }
     else
     {
