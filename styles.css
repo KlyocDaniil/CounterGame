@@ -110,10 +110,11 @@ flex-wrap: wrap;
 }
 .kartItem.BlockedCard{
     background-color: #222629;
-    color: #c5c6c7;
+    color: #0b0c10;
 }
 .kartItem.Unlocked{
     background-color: blue;  animation-duration: 2s;
+    color: #c5c6c7;
 }
 
 /*.counter h1,div{*/
