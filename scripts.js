@@ -4,31 +4,25 @@ let counter = 0;
 
 
 btn.addEventListener('click', () =>{
-   if(IdPerk==='1'){
-       counter+=2;
-   }
-   else if (IdPerk === '2')
-   {
-       counter+=3
-       // alert(Perks)
-   }
-   else if(IdPerk ==='3')
-   {
-       counter+=4
-   }
-   else if(IdPerk ==='4')
-   {
-       counter+=5
-   }
-   else
-   {
-       counter +=1;
-   }
+    switch (IdPerk){
+        case 0:
+            counter+=1
+            break;
+        case '1':
+            counter +=+IdPerk +1
+            break;
+        case '2':
+            counter +=3
+            break;
+        case '3':
+            counter +=4
+            break;
+        case '4':
+            counter +=5
+            break;
 
-   // for (let i = 0;i<Perks.length;i++){
-   //
-   // }
-
+    }
+    
 
 
     pl.innerText = `Кликов:${counter}`
@@ -67,7 +61,9 @@ kart3.classList.add("BlockedCard")
 let kart4 = document.getElementById('kart4')
 kart4.classList.add("BlockedCard")
 
-
+function clearStyleBlock(object){
+    this.classList.remove("BlockedCard")
+}
 
 changer.addEventListener('click',()=>{
     let countClicks = SaveCounter.pop()
@@ -111,7 +107,7 @@ BuyItemBtn1.addEventListener('click',()=>{
     if(coinsMain>=1&&perk1!==1) {
         coinsMain -= 1;
         coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
-        perk1.innerText = "x2"
+        // perk1.innerText = "x2"
         perk1 = 1;
         btn.innerText = `+2`;
         IdPerk = '1';
@@ -155,7 +151,7 @@ BuyItemBtn3.addEventListener('click',()=>{
     }
 })
 let cheats = document.getElementById('btn_Cheat')
-let a;
+
 cheats.addEventListener('click', ()=>{
     coinsMain = 99999;
     coins.innerText =`Количество монет:${coinsMain.toFixed(1)}`
