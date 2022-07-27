@@ -67,7 +67,23 @@ let kart3 = document.getElementById('kart3')
 kart3.classList.add("BlockedCard")
 let kart4 = document.getElementById('kart4')
 kart4.classList.add("BlockedCard")
-
+// let Karts =[kart1,kart2,kart3,kart4]
+function ClearBlockedCard(){
+    switch (perCheck){
+        case 0:
+            kart1.classList.remove("BlockedCard")
+            break;
+        case 1:
+            kart2.classList.remove("BlockedCard")
+            break;
+        case 2:
+            kart1.classList.remove("BlockedCard")
+            break;
+        case 3:
+            kart4.classList.remove("BlockedCard")
+            break;
+    }
+}
 // function clearStyleBlock(object){
 //     this.classList.remove("BlockedCard")
 // }
@@ -77,17 +93,17 @@ changer.addEventListener('click',()=>{
     let MathTime = countClicks/10;
     if(MathTime>=0) {
         coinsMain += MathTime;
-        if (coinsMain>=1){
-            kart1.classList.remove("BlockedCard")
+        if (coinsMain>=1&&perCheck===0){
+            ClearBlockedCard()
         }
         if (coinsMain>=2&&perCheck===1){
-            kart2.classList.remove("BlockedCard")
+            ClearBlockedCard()
         }
         if (coinsMain>=3&&perCheck===2){
-            kart3.classList.remove("BlockedCard")
+            ClearBlockedCard()
         }
         if (coinsMain>=4&&perCheck===3){
-            kart4.classList.remove("BlockedCard")
+            ClearBlockedCard()
         }
         coins.innerText = `Количество монет: ${coinsMain.toFixed(1)}`
         counter = 0;
