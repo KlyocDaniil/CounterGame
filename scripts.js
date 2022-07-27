@@ -67,7 +67,7 @@ let kart3 = document.getElementById('kart3')
 kart3.classList.add("BlockedCard")
 let kart4 = document.getElementById('kart4')
 kart4.classList.add("BlockedCard")
-// let Karts =[kart1,kart2,kart3,kart4]
+let Karts =[kart1,kart2,kart3,kart4]
 function ClearBlockedCard(){
     switch (perCheck){
         case 0:
@@ -183,6 +183,9 @@ function clearFirstListCards(){
     kart2.remove()
     kart3.remove()
     kart4.remove()
+    for(let i =0; Karts.length>i;i++){
+        // alert(Karts[1])
+    }
 }
 
 let btnNextLvl = document.getElementById('btn_NextLvl')
