@@ -9,7 +9,7 @@ btn.addEventListener('click', () =>{
             counter+=1
             break;
         case '1':
-            counter +=+IdPerk +1
+            counter +=2
             break;
         case '2':
             counter +=3
