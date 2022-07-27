@@ -4,20 +4,20 @@ let counter = 0;
 
 
 btn.addEventListener('click', () =>{
-    switch (IdPerk){
+    switch (perCheck){
         case 0:
             counter+=1
             break;
-        case '1':
+        case 1:
             counter +=2
             break;
-        case '2':
+        case 2:
             counter +=3
             break;
-        case '3':
+        case 3:
             counter +=4
             break;
-        case '4':
+        case 4:
             counter +=5
             break;
 
@@ -40,11 +40,12 @@ btnSave.addEventListener('click', () =>{
         counter=0;
         pl.innerText="Кликов:0"
     if(SaveCounter.length>1){
+        SaveCounter.pop()
         throw new Error();
     }
     }
     catch (ErrorFoundArrayIsLargeThen1){
-    alert('Вы можете сохранить только одну сумму кликов')
+    alert(`Вы можете сохранить только одну сумму кликов, ваша текущая сумма ${SaveCounter}, обменяйте её`)
     }
 
 })
