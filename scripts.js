@@ -22,9 +22,6 @@ btn.addEventListener('click', () =>{
             break;
 
     }
-    
-
-
     pl.innerText = `Кликов:${counter}`
 })
 let brnDel= document.getElementById('delal')
@@ -32,16 +29,24 @@ let brnDel= document.getElementById('delal')
 brnDel.addEventListener('click', ()=>{
     counter=0;
     pl.innerText = `Кликов:${counter}`
-
 })
 
 let SaveCounter = [];
 let btnSave = document.getElementById('save')
 let check = document.getElementById('checkSave')
 btnSave.addEventListener('click', () =>{
-    SaveCounter.push(counter)
-    counter=0;
-    pl.innerText="Кликов:0"
+    try{
+        SaveCounter.push(counter)
+        counter=0;
+        pl.innerText="Кликов:0"
+    if(SaveCounter.length>1){
+        throw new Error();
+    }
+    }
+    catch (ErrorFoundArrayIsLargeThen1){
+    alert('Вы можете сохранить только одну сумму кликов')
+    }
+
 })
 check.addEventListener('click',()=>{
     alert(SaveCounter)
@@ -73,13 +78,13 @@ changer.addEventListener('click',()=>{
         if (coinsMain>=1){
             kart1.classList.remove("BlockedCard")
         }
-        if (coinsMain>=2&&perk1===1){
+        if (coinsMain>=2&&perCheck===1){
             kart2.classList.remove("BlockedCard")
         }
-        if (coinsMain>=3&&perk1===1&&perk2===2){
+        if (coinsMain>=3&&perCheck===2){
             kart3.classList.remove("BlockedCard")
         }
-        if (coinsMain>=4&&perk1===1&&perk2===2&&perk3===3){
+        if (coinsMain>=4&&perCheck===3){
             kart4.classList.remove("BlockedCard")
         }
         coins.innerText = `Количество монет: ${coinsMain.toFixed(1)}`
@@ -88,10 +93,7 @@ changer.addEventListener('click',()=>{
     }
 })
 let Perks = []
-let perk1 =0
-let perk2 =0
-let perk3 =0
-let perk4 = 0;
+let perCheck = 0;
 
 // let perk1 = document.getElementById('perk1')
 
@@ -104,11 +106,11 @@ let perk4 = 0;
 let BuyItemBtn1 = document.getElementById("btnBuyItemNum1")
 let IdPerk = 0;
 BuyItemBtn1.addEventListener('click',()=>{
-    if(coinsMain>=1&&perk1!==1) {
+    if(coinsMain>=1&&perCheck!==1) {
         coinsMain -= 1;
         coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
         // perk1.innerText = "x2"
-        perk1 = 1;
+        perCheck = 1;
         btn.innerText = `+2`;
         IdPerk = '1';
         kart1.classList.add('Unlocked')
@@ -121,11 +123,11 @@ BuyItemBtn1.addEventListener('click',()=>{
 })
 let BuyItemBtn2 = document.getElementById('btnBuyItemNum2')
 BuyItemBtn2.addEventListener('click',()=>{
-    if(coinsMain>=2&&perk1!==0&&perk2!==2){
+    if(coinsMain>=2&&perCheck!==0&&perCheck!==2){
     coinsMain -= 2;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk2.innerText=`x3`
-        perk2 = 2;
+    // perk2.innerText=`x3`
+        perCheck = 2;
     btn.innerText =`+3`;
     IdPerk ='2';
     kart2.classList.add('Unlocked')
@@ -137,11 +139,11 @@ BuyItemBtn2.addEventListener('click',()=>{
 })
 let BuyItemBtn3 = document.getElementById('btnBuyItemNum3')
 BuyItemBtn3.addEventListener('click',()=>{
-    if(coinsMain>=3&&perk3!==3&&perk1!==0&&perk2!==0){
+    if(coinsMain>=3&&perCheck!==3&&perCheck!==0&&perCheck!==0){
     coinsMain -= 3;
     coins.innerText=`Количество монет:${coinsMain.toFixed(1)}`
-    perk3.innerText=`x4`
-        perk3 =3;
+    // perk3.innerText=`x4`
+        perCheck =3;
     btn.innerText =`+4`;
     IdPerk ='3';
     kart3.classList.add('Unlocked')
@@ -170,9 +172,8 @@ btnNextLvl.classList.add("BlockedCard")
 
 
     btnNextLvl.addEventListener('click', ()=>{
-        if(perk4 === 4) {
+        if(perCheck === 4) {
             clearFirstListCards()
-
         }
     })
 
@@ -180,11 +181,11 @@ btnNextLvl.classList.add("BlockedCard")
 
 let BuyItemBtn4 = document.getElementById('btnBuyItemNum4')
 BuyItemBtn4.addEventListener('click',()=>{
-    if(coinsMain>4&&perk4!==4&&perk3!==0&&perk1!==0&&perk2!==0) {
+    if(coinsMain>4&&perCheck!==4&&perCheck!==0&&perCheck!==0&&perCheck!==0) {
         coinsMain -= 4;
         coins.innerText = `Количество монет:${coinsMain.toFixed(1)}`
-        perk4.innerText = `x5`
-        perk4=4;
+        // perk4.innerText = `x5`
+        perCheck=4;
         btn.innerText = `+5`;
         IdPerk = '4';
         kart4.classList.add('Unlocked')
